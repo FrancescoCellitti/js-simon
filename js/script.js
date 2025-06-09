@@ -33,13 +33,14 @@ setTimeout(() => {
 
             if (numeri.includes(valoreInput) && !numeriInseriti.includes(valoreInput)) {
                 count++
-                numeriIndovinati = numeriIndovinati + valoreInput[i]
+                numeriIndovinati = numeriIndovinati + valoreInput.toString()
             }
             numeriInseriti.push(valoreInput)
 
         }
         
         if (count != 0) {
+            const indovinati = numeriIndovinati.toString()
             message.innerText = `${count} , ${numeriIndovinati} `
 
         } else {
