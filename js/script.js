@@ -8,7 +8,7 @@ const message = document.getElementById("message")
 
 for (i = 0; i < 5; i++) {
     let liEl = document.createElement("li")
-    let numero = Math.floor(Math.random() * 50)
+    let numero = Math.floor(Math.random() * 50) + 1
     liEl.innerText = numero
     numeri.push(numero)
     ulEl.appendChild(liEl)
@@ -33,15 +33,14 @@ setTimeout(() => {
 
             if (numeri.includes(valoreInput) && !numeriInseriti.includes(valoreInput)) {
                 count++
-                numeriIndovinati = numeriIndovinati + valoreInput.toString()
+                numeriIndovinati = numeriIndovinati +"," + valoreInput.toString()
             }
             numeriInseriti.push(valoreInput)
 
         }
-        
+
         if (count != 0) {
-            const indovinati = numeriIndovinati.toString()
-            message.innerText = `${count} , ${numeriIndovinati} `
+            message.innerText = `${count} ${numeriIndovinati} `
 
         } else {
             message.innerText = "ritenta"
